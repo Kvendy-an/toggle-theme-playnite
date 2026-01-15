@@ -11,6 +11,7 @@ module.exports = {
     Bethesda: '#D4AF37',
     Bookmark: '#FFD700',
     'Commodore Amiga': '#FF6B6B',
+    Completed: '#00E676',
     'Controller Enabled': '#00E676',
     'Controller Support': '#00E676',
     'Couch Gaming': '#FF7043',
