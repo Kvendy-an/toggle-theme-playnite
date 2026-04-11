@@ -228,3 +228,9 @@ Packages:
     Changelog:
       - 🐛 Fix Itch.io casing issue (thanks TwoTracks)
       - ✨ Enhanced focus indicator visibility across all button styles
+  - Version: 1.9.6
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2026-04-11
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.9.6/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_9_6.pthm
+    Changelog:
+      - Fix longstanding focus issues

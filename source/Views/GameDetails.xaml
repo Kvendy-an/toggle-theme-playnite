@@ -1208,28 +1208,20 @@
                             <StackPanel
                                 Grid.Row="2"
                                 Margin="0,0,0,48"
-                                pbeh:FocusBahaviors.FocusBinding="True"
-                                pbeh:FocusBahaviors.OnVisibilityFocus="True"
                                 Orientation="Horizontal">
                                 <ButtonEx
                                     x:Name="PART_ButtonContext"
                                     MinWidth="220"
                                     Margin="2"
                                     HorizontalContentAlignment="Center"
-                                    pbeh:FocusBahaviors.FocusBinding="True"
-                                    pbeh:FocusBahaviors.OnVisibilityFocus="True"
                                     BorderThickness="2">
                                     <ButtonEx.Style>
                                         <Style BasedOn="{StaticResource ButtonBig}" TargetType="ButtonEx">
                                             <Setter Property="Visibility" Value="Visible" />
                                             <Style.Triggers>
-                                                <MultiDataTrigger>
-                                                    <MultiDataTrigger.Conditions>
-                                                        <Condition Binding="{PluginStatus Plugin=NowPlaying_db4e7ade-57fb-426c-8392-60e2347a0209, Status=Installed}" Value="True" />
-                                                        <Condition Binding="{Binding Game.IsRunning}" Value="True" />
-                                                    </MultiDataTrigger.Conditions>
+                                                <DataTrigger Binding="{PluginStatus Plugin=NowPlaying_db4e7ade-57fb-426c-8392-60e2347a0209, Status=Installed}" Value="True">
                                                     <Setter Property="Visibility" Value="Collapsed" />
-                                                </MultiDataTrigger>
+                                                </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </ButtonEx.Style>
@@ -1240,41 +1232,33 @@
                                     pbeh:FocusBahaviors.OnVisibilityFocus="True"
                                     BorderThickness="2"
                                     Command="{PluginSettings Plugin=NowPlaying,
-                                                             Path=ReturnToGame}">
+                                                             Path=InstallOrPlayOrOpenDialog}">
                                     <ButtonEx.Style>
                                         <Style BasedOn="{StaticResource ButtonBig}" TargetType="ButtonEx">
+                                            <Setter Property="Content" Value="Play" />
                                             <Setter Property="Visibility" Value="Visible" />
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Game.IsRunning}" Value="False">
-                                                    <Setter Property="Visibility" Value="Collapsed" />
-                                                </DataTrigger>
                                                 <DataTrigger Binding="{PluginStatus Plugin=NowPlaying_db4e7ade-57fb-426c-8392-60e2347a0209, Status=Installed}" Value="False">
                                                     <Setter Property="Visibility" Value="Collapsed" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Game.IsInstalled}" Value="False">
+                                                    <Setter Property="Content" Value="Install" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Game.IsInstalling}" Value="True">
+                                                    <Setter Property="Content" Value="Installing" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Game.IsLaunching}" Value="True">
+                                                    <Setter Property="Content" Value="Launching" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Game.IsRunning}" Value="True">
+                                                    <Setter Property="Content" Value="Running" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding Game.IsUninstalling}" Value="True">
+                                                    <Setter Property="Content" Value="Uninstalling" />
                                                 </DataTrigger>
                                             </Style.Triggers>
                                         </Style>
                                     </ButtonEx.Style>
-                                    Return to Game
-                                </ButtonEx>
-                                <ButtonEx
-                                    Margin="32,2,2,2"
-                                    BorderThickness="2"
-                                    Command="{PluginSettings Plugin=NowPlaying,
-                                                             Path=CloseGame}">
-                                    <ButtonEx.Style>
-                                        <Style BasedOn="{StaticResource ButtonBig}" TargetType="ButtonEx">
-                                            <Setter Property="Visibility" Value="Visible" />
-                                            <Style.Triggers>
-                                                <DataTrigger Binding="{Binding Game.IsRunning}" Value="False">
-                                                    <Setter Property="Visibility" Value="Collapsed" />
-                                                </DataTrigger>
-                                                <DataTrigger Binding="{PluginStatus Plugin=NowPlaying_db4e7ade-57fb-426c-8392-60e2347a0209, Status=Installed}" Value="False">
-                                                    <Setter Property="Visibility" Value="Collapsed" />
-                                                </DataTrigger>
-                                            </Style.Triggers>
-                                        </Style>
-                                    </ButtonEx.Style>
-                                    Exit
                                 </ButtonEx>
                                 <ButtonEx
                                     Margin="32,2,2,2"
