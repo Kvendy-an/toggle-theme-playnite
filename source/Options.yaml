@@ -253,7 +253,7 @@ Variables:
     Type: Boolean
     Default: true
   Achievements:
-    Title: Achievements (Requires SuccessStory)
+    Title: Achievements (Requires PlayniteAchievements)
     Type: Boolean
     Default: true
   HowLongToBeat:

@@ -7,7 +7,7 @@
     xmlns:pin="clr-namespace:Playnite.Input;assembly=Playnite"
     mc:Ignorable="d">
 
-    <Style x:Key="AchievementsWindowStyle" TargetType="ContentControl">
+    <Style x:Key="AchievementsWindow" TargetType="ContentControl">
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="ContentControl">
@@ -108,7 +108,7 @@
                                             FontFamily="{DynamicResource FontDefaultBold}"
                                             FontSize="64"
                                             Style="{DynamicResource TextBlockBaseStyle}"
-                                            Text="{PluginSettings Plugin=SSHelper,
+                                            Text="{PluginSettings Plugin=PlayniteAchievements,
                                                                   Path=GSLevel,
                                                                   FallbackValue='-'}" />
                                     </StackPanel>
@@ -136,7 +136,7 @@
                                         <TextBlock
                                             VerticalAlignment="Center"
                                             Style="{StaticResource TextBlockBaseStyle}"
-                                            Text="{PluginSettings Plugin=SSHelper,
+                                            Text="{PluginSettings Plugin=PlayniteAchievements,
                                                                   Path=GSScore,
                                                                   FallbackValue='-'}" />
                                     </StackPanel>
@@ -148,7 +148,7 @@
                                     HorizontalAlignment="Stretch"
                                     Maximum="100"
                                     Style="{StaticResource BarRound12}"
-                                    Value="{PluginSettings Plugin=SSHelper,
+                                    Value="{PluginSettings Plugin=PlayniteAchievements,
                                                            Path=GSLevelProgress}" />
 
                                 <Grid Margin="0,0,0,32">
@@ -186,7 +186,7 @@
                                             FontFamily="{DynamicResource FontDefaultBold}"
                                             FontSize="24"
                                             Style="{DynamicResource TextBlockBaseStyle}"
-                                            Text="{PluginSettings Plugin=SSHelper,
+                                            Text="{PluginSettings Plugin=PlayniteAchievements,
                                                                   Path=GSPlat,
                                                                   FallbackValue='-'}" />
                                     </StackPanel>
@@ -221,7 +221,7 @@
                                             FontFamily="{DynamicResource FontDefaultBold}"
                                             FontSize="24"
                                             Style="{DynamicResource TextBlockBaseStyle}"
-                                            Text="{PluginSettings Plugin=SSHelper,
+                                            Text="{PluginSettings Plugin=PlayniteAchievements,
                                                                   Path=GS90,
                                                                   FallbackValue='-'}" />
                                     </StackPanel>
@@ -256,7 +256,7 @@
                                             FontFamily="{DynamicResource FontDefaultBold}"
                                             FontSize="24"
                                             Style="{DynamicResource TextBlockBaseStyle}"
-                                            Text="{PluginSettings Plugin=SSHelper,
+                                            Text="{PluginSettings Plugin=PlayniteAchievements,
                                                                   Path=GS30,
                                                                   FallbackValue='-'}" />
                                     </StackPanel>
@@ -282,7 +282,7 @@
                                             FontFamily="{DynamicResource FontDefaultBold}"
                                             FontSize="24"
                                             Style="{DynamicResource TextBlockBaseStyle}"
-                                            Text="{PluginSettings Plugin=SSHelper,
+                                            Text="{PluginSettings Plugin=PlayniteAchievements,
                                                                   Path=GS15,
                                                                   FallbackValue='-'}" />
                                     </StackPanel>
@@ -300,7 +300,7 @@
                                     BorderThickness="0"
                                     FocusVisualStyle="{x:Null}"
                                     Focusable="True"
-                                    ItemsSource="{PluginSettings Plugin=SSHelper,
+                                    ItemsSource="{PluginSettings Plugin=PlayniteAchievements,
                                                                  Path=AllGamesWithAchievements}"
                                     VirtualizingPanel.IsVirtualizing="True"
                                     VirtualizingPanel.VirtualizationMode="Recycling">
@@ -1767,12 +1767,12 @@
                                     Margin="0,0,24,0"
                                     VerticalAlignment="Center"
                                     Background="#20000000"
-                                    Command="{PluginSettings Plugin=SSHelper,
+                                    Command="{PluginSettings Plugin=PlayniteAchievements,
                                                              Path=OpenAchievementWindow}">
                                     <ButtonEx.Style>
                                         <Style BasedOn="{StaticResource ButtonTopMenuData}" TargetType="ButtonEx">
                                             <Style.Triggers>
-                                                <DataTrigger Binding="{PluginStatus Plugin=SuccessStoryFullscreenHelper, Status=Installed}" Value="False">
+                                                <DataTrigger Binding="{PluginStatus Plugin=PlayniteAchievements, Status=Installed}" Value="False">
                                                     <Setter Property="Visibility" Value="Collapsed" />
                                                 </DataTrigger>
                                             </Style.Triggers>
@@ -1809,7 +1809,7 @@
                                                 FontFamily="{DynamicResource FontDefaultBold}"
                                                 FontSize="40"
                                                 Style="{DynamicResource TextBlockBaseStyle}"
-                                                Text="{PluginSettings Plugin=SSHelper,
+                                                Text="{PluginSettings Plugin=PlayniteAchievements,
                                                                       Path=GSLevel,
                                                                       FallbackValue='-'}" />
                                             <TextBlock
@@ -1825,7 +1825,7 @@
                                                 VerticalAlignment="Center"
                                                 FontSize="24"
                                                 Style="{DynamicResource TextBlockBaseStyle}"
-                                                Text="{PluginSettings Plugin=SSHelper,
+                                                Text="{PluginSettings Plugin=PlayniteAchievements,
                                                                       Path=GSTotal}" />
                                         </StackPanel>
                                     </Grid>
