@@ -243,3 +243,9 @@ Packages:
       - 🚨BREAKING CHANGE🚨 - Migrated from SuccessStory to Playnite Achievements. Install Playnite Achievements to continue seeing Achievements
       - No new functionality at this time but SuccessStory is no longer supported and can be uninstalled unless used elsewhere.
       - See https://github.com/justin-delano/PlayniteAchievements/wiki for a setup guide
+  - Version: 1.10.1
+    RequiredApiVersion: 2.9.0
+    ReleaseDate: 2026-04-29
+    PackageUrl: https://github.com/jonosellier/toggle-theme-playnite/releases/download/v1.10.1/Toggle_28b7d2c0-105b-4632-8dca-d11348bd61d2_1_10_1.pthm
+    Changelog:
+      - Add locked Icon for Achievements (Playnite Achievements required)
